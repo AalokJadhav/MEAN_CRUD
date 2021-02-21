@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                <input type="hidden" name="id" #id="ngModel" [(ngModel)]="employeeService.selectedEmployee.id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="name" id="name" class="validate" autocomplete="off"
+                    #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="enter full name" required>
+                    <label style="color: darkorange;" for="name">Name
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="position" id="position" class="validate" autocomplete="off"
+                    #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="developer" required>
+                    <label style="color: darkorange;">Position</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="office" id="office" class="validate" autocomplete="off"
+                    #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="location" required>
+                    <label style="color: darkorange;">Office</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="salary" id="salary" class="validate" autocomplete="off"
+                    #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary" required>
+                    <label style="color: darkorange;">Salary</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!employeeForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <table class="responsive-table highlight striped">
+                    <thead>
+                        <h6 style="text-align: center;"> Employees List</h6>
+                      <tr>
+                        <th style="color: darkorange;">Name</th>
+                        <th style="color: darkorange;">Position</th>
+                        <th style="color: darkorange;">Office</th>
+                        <th style="color: darkorange;"></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let emp of employeeService.employees">
+                      <td>{{emp.name}}</td>
+                      <td>{{emp.position}}</td>
+                      <td>{{emp.office}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(emp)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(emp.id,employeeForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+  <!-- <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      Made With by Aloko
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer> -->
