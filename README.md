@@ -54,13 +54,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 		8. in VS Code Editor create NodeJs Folder and open in VS Code.
 		9. Open NodeJs in cmd and npm init for creating package.json file.
 	       10. install npm i express mongoose body-parser --save
-               11. Create db.js file for conneting mongodb database.
+              11. Create db.js file for conneting mongodb database.
   
 			In db.js file require mongoose for connecting database and shows error or success message.
   
-               12. craete root file ie. index.js for listeing port 3000
-               13. create models folder with employee.js file for required schema to implement.
-               14. create controller folder with employeeController.js file for Create, Read, Edit, Delete Operations 
+              12. craete root file ie. index.js for listeing port 3000
+              13. create models folder with employee.js file for required schema to implement.
+              14. create controller folder with employeeController.js file for Create, Read, Edit, Delete Operations 
 		   using router.get, router.post, router.delete, router.put
 
 
